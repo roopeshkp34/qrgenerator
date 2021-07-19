@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'CSS/home.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Name: {{ profile.name }}</h1>
+    <h1>Username: {{ profile.username }}</h1>
+    <h1>Place: {{ profile.place }}</h1>
+    <h1>Address: {{ profile.address }}</h1>
+    <!-- <img src="{% static 'image/"{{ profile.username }}"' %}" alt="No Image"> -->
+    <img style="text-decoration: none;margin-top: 10px;" height="300px" width="300px" style="margin-top: 10px;" src= "{{ profile.imageURL }}" alt="">
+
+    <button><a href="{% url 'download' profile.username %}">Download</a></button>
+
+</body>
+</html>
